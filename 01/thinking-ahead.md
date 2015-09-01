@@ -4,7 +4,7 @@ A major frustration, forthcoming, will be wrapping your head around the notion o
 
 1. A user does something, and we want that to effect the design or content (events)
 2. We want the design or content to do something over, or react to time (animation and timeouts)
-3. We don't want the same things to happen in the same way (conditons)
+3. We don't want the same things to happen in the same way (conditions)
 
 When we create HTML, we are creating **Elements**. An element is also a **Node** (though a node in net necessarily an element). Elements are our building blocks, and right now, they represent content. A paragraph is tucked between \<p\> markup. Now that it is a paragraph, we can make sure it looks a certain way with CSS, and with javascript, we can make it *act* a certain way.
 

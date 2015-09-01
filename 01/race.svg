@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1200px" height="800px" viewBox="0 0 300 200" style="enable-background:new 0 0 300 200;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{opacity:0.5;fill:#FFFFFF;}
+	.st1{fill:none;stroke:#067DBF;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:#FFF200;}
+]]>
+</style>
+<path class="st2" d="M135.97,174.27C87.38,169.15,50,137.85,50,100c0-41.42,44.77-75,100-75s100,33.58,100,75 c0,41.42-44.77,75-100,75"/>
+<ellipse class="st0" cx="224.33" cy="142" rx="26" ry="17.67"/>
+<ellipse class="st0" cx="57.67" cy="127.33" rx="26" ry="17.67"/>
+<ellipse class="st0" cx="152.67" cy="26.67" rx="34.33" ry="17.67"/>
+<g>
+	<rect x="113.71" y="186.5" width="5" height="2.5"/>
+	<rect x="118.71" y="184" width="5" height="2.5"/>
+	<rect x="113.71" y="181.5" width="5" height="2.5"/>
+	<rect x="118.71" y="179" width="5" height="2.5"/>
+	<rect x="123.71" y="186.5" width="5" height="2.5"/>
+	<rect x="128.71" y="184" width="5" height="2.5"/>
+	<rect x="123.71" y="181.5" width="5" height="2.5"/>
+	<rect x="128.71" y="179" width="5" height="2.5"/>
+</g>
+<polygon points="233.38,136.99 230.25,142.41 222.5,128.99 209.5,151.5 225,151.5 235.5,151.5 241.76,151.5 "/>
+<path class="st1" d="M159.88,18.08c-1.47,3.52-4.94,6-9,6s-7.53-2.48-9-6L141.83,18c-1.47,3.52-4.94,6-9,6s-7.53-2.48-9-6"/>
+<path class="st1" d="M177.71,25.67c-1.47,3.52-4.95,6-9,6c-4.06,0-7.53-2.48-9-6l-0.04-0.08c-1.47,3.52-4.94,6-9,6
+	c-4.06,0-7.53-2.48-9-6"/>
+<polygon class="st3" points="72.33,125 70.21,127.7 71.67,130.81 68.63,132.41 68.69,135.85 65.27,136.07 63.93,139.24 
+	60.71,138.05 58.2,140.4 55.73,138 52.49,139.12 51.21,135.94 47.79,135.64 47.92,132.21 44.92,130.55 46.43,127.47 44.36,124.73 
+	47,122.53 46.22,119.18 49.53,118.25 50.18,114.88 53.58,115.37 55.54,112.55 58.45,114.38 61.39,112.61 63.3,115.46 66.71,115.04 
+	67.3,118.42 70.58,119.42 69.74,122.75 "/>
+<circle cx="150.33" cy="174.33" r="3.67"/>
+<circle cx="136.33" cy="174.33" r="3.67"/>
+</svg>
