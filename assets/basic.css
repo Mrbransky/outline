@@ -104,14 +104,29 @@ sup {
   vertical-align:top;
 }
 
-time[datetime] {
-  font-weight:600;
+h2 time[datetime] {
   letter-spacing:0.25em;
   color:#888;
+  font-size:0.5em;
 }
 
 footer {
-  padding:5em;
   margin:1em 0 0 0;
   background-color:#eee;
+}
+
+footer dt {
+  font-size:1.5em;
+}
+
+footer dd {
+  margin:0.5em;
+  font-size:1.25em;
+}
+
+footer aside, footer nav {
+  width:50%;
+  box-sizing:border-box;
+  float:left;
+  padding:2.5em;
 }
