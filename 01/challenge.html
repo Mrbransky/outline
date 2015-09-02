@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Week 1 Challenge</title>
+    <link rel="stylesheet" href="../assets/basic.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <main>
+    <h1>A taste of the program</h1>
+    <p>A major frustration, forthcoming, will be wrapping your head around the notion of programming. The programming we will be interested in this class will be necessary to cover the parts that HTML and CSS won't be able to do for us, namely:</p>
+
+    <ol>
+      <li>A user does something, and we want that to effect the design or content (events)</li>
+      <li>We want the design or content to do something over, or react to time (animation and timeouts)</li>
+      <li>We don't want the same things to happen in the same way (conditions)</li>
+    </ol>
+
+    <p>When we create HTML, we are creating <em>Elements</em>. An element is also a <em>Node</em> (though a node in net necessarily an element). Elements are our building blocks, and right now, they represent content. A paragraph is tucked between &lt;p&gt; markup. Now that it is a paragraph, we can make sure it looks a certain way with <abbr>CSS</abbr>, and with javascript, we can make it <em>act</em> a certain way.</p>
+
+    <h2>Demo: Make a very quick HTML page, run through some stuff in dev tools.</h2>
+
+    <h2>Demo: Events, Timeouts, Conditions.</h2>
+
+    <p>Say we have a box of things - a box of little objects. You're peering down into the box and you have paragraphs, headings, and even boxes filled with other little boxes. But you're main box - the box containing everything - we are going to call it the **Root** box. So, you know there is this paragraph in the root box - there are a bunch of them actually, but you just want the first on you see. You dig around, you <strong>query</strong> the <strong>root</strong> box for it, and you eventually select it. There it is, in your hand. This little paragraph element in your hand, it has a tiny brain in it - but more akin to an alarm clock / parrot. There in your hand, with the paragraph element, you want to be able to tell it do to something - not right away, but to do something later on, to react to something someone else might do. In fact, you want the paraghaph to yell "No Touching!" whenever it feels a poke. You look down into your hand and you tell your paragraph "Listen, when I poke, you yell.". It responds by doing nothing, so you assume it understands otherwise it would complain - it's just a paragraph after all. You test it out... POKE... "Leave me alone!" it says.</p>
+
+    <pre>
+    &lt;html&gt;
+    	&lt;body&gt;
+    		&lt;p&gt;I'm a lil paragraph&lt;/p&gt;
+    	&lt;/body&gt;
+    &lt;/html&gt;
+    </pre>
+
+    <code>
+    var elem = document.querySelector('p');
+    elem.addEventListener('p', function (evt) {
+    	alert('No touching!');
+    }, false);
+    </code>
+    </main>
+  </body>
+</html>
