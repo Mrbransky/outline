@@ -149,7 +149,11 @@
           
           var addTopic = function (evt) {
             var div = document.createElement('div');
-            div.innerHTML = evt.target.responseXML.querySelector('body').innerHTML;
+            var body = evt.target.responseXML.querySelector('body');
+            var serializer = new XMLSerializer();
+            [].forEach.call(body.childNodes, function (node) {
+              div.innerHTML += serializer.serializeToString(node);
+            });
             this.parentNode.replaceChild(div, this);
           };
           
@@ -157,7 +161,6 @@
             var i = comments.iterateNext();
   
             while (i) {
-
               var file = i.parentNode.id.substring(2) + '/' + i.textContent.trim().substring(6);
               var xhr = new XMLHttpRequest();
               xhr.overrideMimeType('text/xml');
