@@ -130,3 +130,8 @@ footer aside, footer nav {
   float:left;
   padding:2.5em;
 }
+
+blockquote {
+  font-style:italic;
+  margin:2em;
+}
