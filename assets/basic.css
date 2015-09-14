@@ -135,3 +135,26 @@ blockquote {
   font-style:italic;
   margin:2em;
 }
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+tbody th {
+  text-align:right;
+  padding:0.5em 1em;
+  font-size:1.25em;
+}
+tbody td {
+  border:1px solid #fff;
+  text-align:center;
+}
+thead th {
+  font-size:1.25em;
+}
+tbody td:not(:empty) {
+  background-color:#72CAC8;
+}
+tbody td:empty {
+  background-color:#EAEAEA;
+}

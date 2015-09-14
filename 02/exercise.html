@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheat Sheet Exercise</title>
+    <style type="text/css" media="screen">
+      /* <![CDATA[ */
+      body {
+        font-family:Helvetica;
+        font-weight:200;
+      }
+      fieldset {width: 70%;left:17.5%;top:5em;border:none;position:fixed;}
+      nav {
+        width:15%;
+        float:left;
+      }
+      ul {
+        padding:1em;
+        list-style:none;
+      }
+      input, label {
+        padding:1em;
+        width:100%;
+        font-size:2em;
+      }
+      .active {
+        color:#EC008C;
+        font-weight:400;
+      }
+      
+      label {display:block;}
+      /* ]]> */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+      </ul>
+    </nav>
+    <fieldset>
+      <legend>Week 1 Exercise</legend>
+      <label for="tag">Type tag</label>
+      <input type="text" name="tag" value="" id="tag" autocorrect="false"/>
+    </fieldset>
+    <script type="text/javascript">
+      // <![CDATA[
+        var data = null;
+        var tag = document.getElementById('tag');
+        var label = document.querySelector('label[for]');
+        var list = document.querySelector('nav ul');
+        var active = null;
+        var start = Date.now();
+
+        tag.addEventListener('keyup', function (evt) {
+          if (data.elements[active.dataset.index].tag === this.value) {
+            this.value = "";
+            exercize();
+          }
+        });
+        var exercize = function () {
+          var items = document.querySelectorAll('nav ul li:not(.active)');
+          if (items.length > 0) {
+            active = items.item(Math.floor(items.length * Math.random()));
+
+            tag.placeholder = data.elements[active.dataset.index].tag; 
+            label.textContent = data.elements[active.dataset.index].description;
+            active.classList.add('active');
+          } else {
+            console.log('Here is your confirmation message:', (Date.now() - start).toString(36));
+            [].forEach.call(document.querySelectorAll('nav ul li.active'), function (li) {
+              li.classList.remove('active');
+            });
+            exercize();
+          }
+          
+        };
+        
+        function load_elements(json) {
+          data = json;
+          data.elements.forEach(function (element, idx) {
+            if (element.importance > 5 || element.importance === 0) {
+              var li = list.appendChild(document.createElement('li'));
+              li.textContent = element.tag;
+              li.dataset.index = idx;
+              li.dataset.priority = element.importance;
+            }
+          });
+          
+          exercize();
+        }
+      // ]]>
+    </script>
+    <script src="elements.json" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

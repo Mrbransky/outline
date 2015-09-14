@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Scripting for Web and Mobile</title>
+    <link rel="stylesheet" href="assets/basic.css" type="text/css" media="screen" title="Basic Stylesheet" />
+  </head>
+  <body>
+    <header class="container">
+      <p style="float:right;">Mondays, 12:30pm to 3:20pm</p>
+      <h2>36-1420 §01</h2>
+      <h1>Scripting for Web and Mobile I</h1>
+    </header>
+    <main>
+
+    </main>
+    <footer class="container">
+      <aside>
+        <h2>Footnotes</h2>
+        <p id="challenge">[1] Challenges are designed to be pretty easy... but lengthy – what I dub "shoveling the barn" type of work. The rub, however, is that should you decide to find a clever way to figure it out, it might not be as much work as you think!</p>
+      </aside>
+      <nav>
+        <h2>Supplements</h2>
+        <dl>
+          <dt><a href="http://www.evolutionoftheweb.com/">Evolution of the Web</a></dt>
+          <dd>A visualization of some of the technologies that made the internet happen. Take a peek at it if you have a few spare moments.</dd>
+          <dt><a href="https://www.khanacademy.org/computing/computer-programming/html-css">Khan Academy Lessons</a></dt>
+          <dd>I've used these in the past for other subjects, and they have a great mission and committment to learning. Spend some time there if you'd like to sharpen your skills.</dd>
+          <dt><a href="https://www.codecademy.com/tracks/web">Codecademy</a></dt>
+          <dd>Another online learning resource.</dd>
+          <dt><a href="http://learn.shayhowe.com/">Shay Howe</a></dt>
+          <dd>Nice clean outlines about many of the finer points about <abbr>HTML</abbr> and <abbr>CSS</abbr></dd>
+          <dt><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></dt>
+          <dd>Intense, but tells you <em>everything</em> you might need to know about the internet's ticking parts.</dd>
+        </dl>
+      </nav>
+    </footer>
+    <script type="text/javascript">
+      // <![CDATA[
+        document.addEventListener("DOMContentLoaded", function(evt) {
+          var timestamps = this.querySelectorAll('dt > time[datetime]');
+          var now = new Date();
+          [].forEach.call(timestamps, function (timestamp) {
+            if (now < new Date(timestamp.getAttribute('datetime'))) {
+              timestamp.parentNode.classList.add('passed');
+            }
+          });
+          
+          var comments = document.evaluate( '/html/body/descendant::comment()[starts-with(normalize-space(.), "embed")]', document, null, XPathResult.ANY_TYPE, null );
+          
+          var addTopic = function (evt) {
+            var div = document.createElement('div');
+            var body = evt.target.responseXML.querySelector('body');
+            var serializer = new XMLSerializer();
+            [].forEach.call(body.childNodes, function (node) {
+              div.innerHTML += serializer.serializeToString(node);
+            });
+            this.parentNode.replaceChild(div, this);
+          };
+          
+          try {
+            var i = comments.iterateNext();
+  
+            while (i) {
+              var file = i.parentNode.id.substring(2) + '/' + i.textContent.trim().substring(6);
+              var xhr = new XMLHttpRequest();
+              xhr.overrideMimeType('text/xml');
+              xhr.addEventListener('load', addTopic.bind(i));
+              xhr.open('GET', file);
+              xhr.send();
+              i = comments.iterateNext();
+            }	
+          } catch (e) {
+            console.error(e);
+          }
+
+        });
+      // ]]>
+    </script>
+  </body>
+</html>

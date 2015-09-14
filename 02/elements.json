@@ -1,0 +1,693 @@
+load_elements({
+  best: ["body", "a", "article","em","strong", "br","div", "p","h1","h2","h3", "head", "header", "hr", "img", "ul", "ol", "li", "meta", "nav", "section", "span", "title"],
+  elements: [
+    {
+      attributes: [],
+      content: "string",
+      description: "A comment Tag - stuff insights and helpful things in here as nobody will see it outside of the source code - replace 'text' with any content that is helpful.",
+      flow: "structural",
+      importance: 3,
+      tag: "<!-- comment -->"
+    },
+    {
+      attributes: [],
+      content: "null",
+      description: "Doctypes are used to tell a browser what kind of content you are sending it",
+      flow: "structural",
+      importance: 0,
+      tag: "<!DOCTYPE>"
+    },
+    {
+      attributes: ["href=url"],
+      content: "flow",
+      description: "A represents a hyperlink. Nearly useless without the href attribute [href=url]",
+      flow: "inline",
+      importance: 10,
+      tag: "<a>"
+    },
+    {
+      attributes: ["title=text"],
+      content: "flow",
+      description: "An abbreviation [title]",
+      flow: "inline",
+      importance: 5,
+      tag: "<abbr>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "A good spot for addresses and contact-related content",
+      flow: "block",
+      importance: 5,
+      tag: "<address>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "A high level container for other tags",
+      flow: "block",
+      importance: 6,
+      tag: "<article>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents adjacent content - use with article",
+      flow: "block",
+      importance: 5,
+      tag: "<aside>"
+    },
+    {
+      attributes: ["src=url"],
+      content: "",
+      description: "Used to play audio-based media",
+      flow: "inline",
+      importance: 5,
+      tag: "<audio>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Another indicator for bold. I prefer always using strong, but this is available as well.",
+      flow: "inline",
+      importance: 5,
+      tag: "<b>"
+    },
+    {
+      attributes: [],
+      content: "flow",
+      description: "A container type element for quotes - especially something like a pull-quote.",
+      flow: "block",
+      importance: 4,
+      tag: "<blockquote>"
+    },
+    {
+      attributes: [],
+      content: "flow",
+      description: "One of the most important tags - contains all visible HTML Elements. Only 1 per document.",
+      flow: "parent of all visible content",
+      importance: 0,
+      tag: "<body>"
+    },
+    {
+      attributes: [],
+      content: "empty",
+      description: "Creates a line break in text. Experience has taught me that this tag is almost never necessary, unless creating a line-break.. ie. do not use for layout or margins.",
+      flow: "block-ish",
+      importance: 3,
+      tag: "<br/>"
+    },
+    {
+      attributes: ["type=submit|reset|button"],
+      content: "flow",
+      description: "Used in forms and for other interactive triggers.",
+      flow: "inline",
+      importance: 6,
+      tag: "<button>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to draw, javascript is necessary - pixel based as opposed to vector.",
+      flow: "block",
+      importance: 1,
+      tag: "<canvas>"
+    },
+    {
+      attributes: [],
+      content: "text",
+      description: "Used with tables to provide information about the table.",
+      flow: "table",
+      importance: 1,
+      tag: "<caption>"
+    },
+    {
+      attributes: [],
+      content: "text",
+      description: "Used to represent a reference to creative work",
+      flow: "inline",
+      importance: 5,
+      tag: "<cite>"
+    },
+    {
+      attributes: [],
+      content: "text",
+      description: "Used to show code or programming-related information for users.",
+      flow: "inline",
+      importance: 2,
+      tag: "<code>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used with tables to denote columns.",
+      flow: "table",
+      importance: 1,
+      tag: "<col>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to denote a group of columns",
+      flow: "table",
+      importance: 1,
+      tag: "<colgroup>"
+    },
+    {
+      attributes: [],
+      content: "flow",
+      description: "Defines the definition when used in a definition list (as opposed to a dt Element, which preceeds it).",
+      flow: "block",
+      importance: 3,
+      tag: "<dd>"
+    },
+    {
+      attributes: [],
+      content: "text",
+      description: "Represents deleted text (commonly used with a visual strike-thorough)",
+      flow: "inline",
+      importance: 5,
+      tag: "<del>"
+    },
+    {
+      attributes: [],
+      content: "<summary>, flow",
+      description: "Represents a disclosure widget - not standard yet",
+      flow: "",
+      importance: 1,
+      tag: "<details>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Obscure - used to semantically join definition lists.",
+      flow: "",
+      importance: 1,
+      tag: "<dfn>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "General purpose. Stand's for 'division' - has no semantic meaning, but helps with layout as necessary.",
+      flow: "block",
+      importance: 10,
+      tag: "<div>"
+    },
+    {
+      attributes: [],
+      content: "<dt>, <dd>",
+      description: "The root element of a definition list. Contains dt and dd tags.",
+      flow: "block",
+      importance: 5,
+      tag: "<dl>"
+    },
+    {
+      attributes: [],
+      content: "text",
+      description: "A definition tag - immediately followed by a dd",
+      flow: "inline",
+      importance: 1,
+      tag: "<dt>"
+    },
+    {
+      attributes: [],
+      content: "text",
+      description: "Emphasis - or italicized text.",
+      flow: "inline",
+      importance: 9,
+      tag: "<em>"
+    },
+    {
+      attributes: [],
+      content: "flow",
+      description: "Used to group form elements.",
+      flow: "block",
+      importance: 5,
+      tag: "<fieldset>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Caption associated with a figure.",
+      flow: "",
+      importance: 1,
+      tag: "<figcaption>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents self contained content - a figure, illustration, etc.",
+      flow: "",
+      importance: 5,
+      tag: "<figure>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Content organizing tag, self explanatory.",
+      flow: "",
+      importance: 5,
+      tag: "<footer>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Holds input and other data collection mechanisms. [action=url, method=GET|POST]",
+      flow: "",
+      importance: 5,
+      tag: "<form>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Biggest Heading tag - try to only have 1 per document.",
+      flow: "",
+      importance: 9,
+      tag: "<h1>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Level 2 heading.",
+      flow: "",
+      importance: 6,
+      tag: "<h2>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Heading tag level 3",
+      flow: "",
+      importance: 6,
+      tag: "<h3>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Heading tag level 4",
+      flow: "",
+      importance: 4,
+      tag: "<h4>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Heading tag level 5",
+      flow: "",
+      importance: 4,
+      tag: "<h5>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Heading tag level 6",
+      flow: "",
+      importance: 5,
+      tag: "<h6>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "The first tag after the html root. Contains title, meta, and other non-visual tags.",
+      flow: "",
+      importance: 0,
+      tag: "<head>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Self explanatory container tag.",
+      flow: "",
+      importance: 6,
+      tag: "<header>"
+    },
+    {
+      attributes: [],
+      content: "empty",
+      description: "Horizontal rule",
+      flow: "",
+      importance: 6,
+      tag: "<hr/>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "The root element - only ever use one, contains ALL other tags. Mandatory",
+      flow: "",
+      importance: 10,
+      tag: "<html>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Italicized text.",
+      flow: "",
+      importance: 5,
+      tag: "<i>"
+    },
+    {
+      attributes: ["src=url"],
+      content: "",
+      description: "Embeds an entire other url into the page. Think advertising. [src=url]",
+      flow: "",
+      importance: 5,
+      tag: "<iframe>"
+    },
+    {
+      attributes: ["src=url", "alt=text"],
+      content: "",
+      description: "Representation for image elements. Commonly used.",
+      flow: "inline",
+      importance: 10,
+      tag: "<img/>"
+    },
+    {
+      attributes: ["type=text|hidden|password"],
+      content: "",
+      description: "What it accepts depends on its 'type' attribute. Used in forms.",
+      flow: "inline",
+      importance: 7,
+      tag: "<input/>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Opposite of del Element - represents text that has been inserted into document - also underlines text.",
+      flow: "",
+      importance: 5,
+      tag: "<ins>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used with input elements, important for usability [for=refid]",
+      flow: "",
+      importance: 5,
+      tag: "<label>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to title the fieldset Element - no uses otherwise.",
+      flow: "",
+      importance: 5,
+      tag: "<legend>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "List item - used with ol and ul Elements",
+      flow: "",
+      importance: 10,
+      tag: "<li>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used in head to associate stylesheets and other resources that affect the browser. [href=url]",
+      flow: "",
+      importance: 5,
+      tag: "<link>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to highlight text.",
+      flow: "",
+      importance: 5,
+      tag: "<mark>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used in head to supply metadata to browser.",
+      flow: "",
+      importance: 6,
+      tag: "<meta/>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "An element indicating some measurable quantity.",
+      flow: "",
+      importance: 1,
+      tag: "<meter>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Container to indicate child elements are utilized for navigation",
+      flow: "",
+      importance: 6,
+      tag: "<nav>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "A tag to show a message in the event that a user does not have javascript enabled.",
+      flow: "",
+      importance: 1,
+      tag: "<noscript>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents an ordered (numbered) list",
+      flow: "",
+      importance: 10,
+      tag: "<ol>"
+    },
+    {
+      attributes: ["value=text"],
+      content: "<option>",
+      description: "Represents a group of options.",
+      flow: "",
+      importance: 3,
+      tag: "<optgroup>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "This represents the elements used in a select menu.",
+      flow: "",
+      importance: 5,
+      tag: "<option>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "A paragraph - commonly used",
+      flow: "",
+      importance: 10,
+      tag: "<p>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Preformatted text - honors white space, including tabs, spaces, and line-breaks",
+      flow: "",
+      importance: 5,
+      tag: "<pre>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to indicate the progress of a task.",
+      flow: "",
+      importance: 1,
+      tag: "<progress>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "An inline quotation",
+      flow: "",
+      importance: 5,
+      tag: "<q>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Contains or embeds javascript. [src=url, type='text/javascript']",
+      flow: "",
+      importance: 5,
+      tag: "<script>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "A container tag",
+      flow: "",
+      importance: 10,
+      tag: "<section>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Can be used with audio and video elements to specify media.",
+      flow: "",
+      importance: 1,
+      tag: "<source>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents a select menu, can be used in forms - think list of states - and elsewhere for interactivity.",
+      flow: "",
+      importance: 5,
+      tag: "<select>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "The inline equivalent of a div - use when no other tag is appropriate.",
+      flow: "",
+      importance: 10,
+      tag: "<span>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Essentially bolded text, but with a semantic meaning of importance",
+      flow: "",
+      importance: 10,
+      tag: "<strong>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to contain styles - only goes in the head of the document. [type='text/css']",
+      flow: "",
+      importance: 5,
+      tag: "<style>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Subscript",
+      flow: "",
+      importance: 5,
+      tag: "<sub>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used with details element.",
+      flow: "",
+      importance: 1,
+      tag: "<summary>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Superscript",
+      flow: "",
+      importance: 5,
+      tag: "<sup>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents tabular data - don't use for layout.",
+      flow: "",
+      importance: 5,
+      tag: "<table>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used for the body of the table.",
+      flow: "",
+      importance: 1,
+      tag: "<tbody>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents a table cell.",
+      flow: "",
+      importance: 1,
+      tag: "<td>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used with forms - it creates a box that a user can type in.",
+      flow: "",
+      importance: 5,
+      tag: "<textarea>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Table footer",
+      flow: "",
+      importance: 1,
+      tag: "<tfoot>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents a table head cell",
+      flow: "",
+      importance: 1,
+      tag: "<th>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Groups elements of the table head",
+      flow: "",
+      importance: 1,
+      tag: "<thead>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Used to semantically indicate time.",
+      flow: "",
+      importance: 1,
+      tag: "<time>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Goes in the head - this is how the browser displays the page title in a tab.",
+      flow: "",
+      importance: 10,
+      tag: "<title>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Represents a table row",
+      flow: "",
+      importance: 1,
+      tag: "<tr>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Can be used with audio and video elements to supplement data, such as closed captions",
+      flow: "",
+      importance: 5,
+      tag: "<track>"
+    },
+    {
+      attributes: [],
+      content: "",
+      description: "Unordered list - think bullets.",
+      flow: "",
+      importance: 10,
+      tag: "<ul>"
+    },
+    {
+      attributes: ["src=url"],
+      content: "",
+      description: "Used to represent a video-based media.",
+      flow: "",
+      importance: 5,
+      tag: "<video>"
+    }
+  ],
+});
