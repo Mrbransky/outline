@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheatsheet: Week 2 Challenge</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../assets/basic.css" type="text/css" media="screen" />
+    <style type="text/css" media="screen">
+      /* <![CDATA[ */
+      .tags {
+        padding:0;
+        margin:2em;
+        list-style:none;
+      }
+      .tags li {
+        display:block;
+        float:left;
+        padding:0.5em;
+        line-height:2em;
+        margin:0.25em;
+        background-color:#eee;
+      }
+      .useful {
+        font-weight:800;
+      }
+      /* ]]> */
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cheatsheet</h1>
+      <p>This assignment is an information design problem as much as a research one – despite a very flexible and forgiving nature, <abbr>HTML</abbr> has plenty of rules about usage and necessary attributes. Given the list below, more important tags are bolded. Feel free to focus on the bold group, or if your design can accomodate a more comprehensive resource, by all means, use them all. </p>
+      <h4>Think about...</h4>
+      <ul>
+        <li>Block vs. inline elements.</li>
+        <li>tags that rely on other tags (ol > li)</li>
+        <li>mandatory tags (html, body...)</li>
+        <li>tags that <strong>require</strong> attributes (img, a..) to function</li>
+      </ul>
+      <h4>Here are the tags. </h4>
+      <ul class="tags">
+      </ul>
+    </main>
+    
+    <script type="text/javascript">
+      // <![CDATA[
+        function load_elements(json) {
+          var list = document.querySelector('ul.tags');
+          data = json;
+          data.elements.forEach(function (element, idx) {
+            var li = list.appendChild(document.createElement('li'));
+            li.textContent = element.tag;
+            li.dataset.index = idx;
+            li.dataset.priority = element.importance;
+            
+            if (element.importance > 2 || element.importance === 0) {
+              li.classList.add("useful");
+            }
+          });
+          
+          exercize();
+        }
+      // ]]>
+    </script>
+    <script src="elements.json" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
+    

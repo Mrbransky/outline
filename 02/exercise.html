@@ -48,7 +48,7 @@
         var label = document.querySelector('label[for]');
         var list = document.querySelector('nav ul');
         var active = null;
-        var start = Date.now();
+        var start = (Date.now()).toString(36);
 
         tag.addEventListener('keyup', function (evt) {
           if (data.elements[active.dataset.index].tag === this.value) {
@@ -56,6 +56,7 @@
             exercize();
           }
         });
+        
         var exercize = function () {
           var items = document.querySelectorAll('nav ul li:not(.active)');
           if (items.length > 0) {
@@ -65,7 +66,7 @@
             label.textContent = data.elements[active.dataset.index].description;
             active.classList.add('active');
           } else {
-            console.log('Here is your confirmation message:', (Date.now() - start).toString(36));
+            console.log('Here is your confirmation message:', (Date.now()).toString(36) + ':' + start);
             [].forEach.call(document.querySelectorAll('nav ul li.active'), function (li) {
               li.classList.remove('active');
             });
